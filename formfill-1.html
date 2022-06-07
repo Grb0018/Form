@@ -1,0 +1,470 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@800&family=Montserrat:wght@300&display=swap"
+        rel="stylesheet">
+    <style>
+        #main {
+            background-image: linear-gradient(45deg, #b3edf9, #ffb9ca);
+            background-size: 100% 150%;
+            font-family: 'Montserrat', sans-serif;
+            height: 234%;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        #header {
+            position: absolute;
+            font-size: 55px;
+            background-image: linear-gradient(to right, #ff6e7f, #bfe9ff);
+            background-size: 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            left: 13%;
+            top: 1%;
+            font-weight: 100;
+
+
+        }
+
+        #firstthing {
+            height: 69%;
+            width: 28%;
+            top: 18%;
+            left: 25%;
+            background-color: whitesmoke;
+            position: absolute;
+            border-radius: 3%;
+            box-shadow: 10px 10px 1px rgb(88 80 80 / 24%);
+            z-index: 1;
+            display: flex;
+
+        }
+
+        #sidething {
+            height: 44%;
+            display: flex;
+            width: 24%;
+            top: 30%;
+            left: 50%;
+            position: absolute;
+            z-index: -1;
+            border-radius: 3%;
+            box-shadow: 2px 8px 100px rgb(37 25 25);
+            background-color: whitesmoke;
+            opacity: 0.4;
+            border: 3px solid white;
+        }
+
+        #nameput {
+            top: 40%;
+            left: 10%;
+            height: 7%;
+            width: 67%;
+            position: absolute;
+            margin: 20px;
+            border: 0px;
+            border-bottom: 1px solid red;
+            background-color: whitesmoke;
+            text-transform: capitalize;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            padding-left: 10px;
+            text-transform: capitalize;
+        }
+
+        #locationput {
+            height: 7%;
+            width: 67%;
+            top: 60%;
+            left: 10%;
+            position: absolute;
+            margin: 20px;
+            border: 0px;
+            border-bottom: 1px solid red;
+            background-color: whitesmoke;
+            text-transform: capitalize;
+        }
+
+        #pbtn {
+            width: 25%;
+            height: 10%;
+            background-color: saddlebrown;
+            position: absolute;
+            bottom: 5%;
+            left: 35%;
+            background-image: linear-gradient(to right, #ff6e7f, #bfe9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            border: 1px solid rgb(178 207 228 / 80%);
+            font-size: 20px;
+            text-align: center;
+            box-shadow: 1px 1px 1px #aaaad3;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #pbtn:hover {
+            transform: scale(1.1);
+        }
+
+        #suraksha {
+            position: absolute;
+            width: 63%;
+            height: 30%;
+            left: 103%;
+            top: 30%;
+        }
+
+        #usericon {
+            position: absolute;
+            width: 4%;
+            height: 7%;
+            left: 76%;
+            top: 42%;
+            opacity: 0.3;
+        }
+
+        #locationicon {
+            position: absolute;
+            width: 4%;
+            height: 7%;
+            left: 76%;
+            top: 61%;
+            opacity: 0.3;
+        }
+
+        #src {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            width: 60%;
+            justify-content: flex-start;
+            height: 15%;
+            padding: 20px;
+            background: #faf7f3;
+            box-shadow: 5px 6px 6px #a0bee2;
+            flex-direction: column;
+        }
+
+        #src1 {
+            display: flex;
+            position: absolute;
+            top: 28%;
+            left: 2%;
+            width: 80%;
+            justify-content: space-evenly;
+            height: 30%;
+            margin: 22px;
+        }
+
+        #ctgdiv {
+            display: none;
+            position: absolute;
+            top: 75%;
+            left: 20%;
+            width: 60%;
+            height: 15%;
+            background: #faf7f3;
+            padding: 20px;
+            box-shadow: 5px 6px 6px #a0bee2;
+            flex-direction: column;
+        }
+
+        #ctg2 {
+            display: flex;
+            position: absolute;
+            top: 39%;
+            left: 1%;
+            width: 80%;
+            justify-content: space-evenly;
+            height: 30%;
+            background: #faf7f3;
+            padding: 20px;
+        }
+
+        #srcp,
+        #ctg,
+        #Critidivselect {
+            border: 1px solid white;
+            color: white;
+            background: #5d387e;
+            width: 43%;
+            text-align: center;
+            font-size: 16px;
+            margin: 0 10%;
+        }
+
+        #othersource,
+        #ctgspace {
+            border: none;
+            display: none;
+            border-bottom: 1px solid rgb(235, 71, 21);
+            background: transparent;
+        }
+
+        #SOURCE,
+        #CATAGORY,
+        #Critical,
+        #Name,
+        #Location {
+            background: transparent;
+            color: #9e9e9e;
+            border: 2px solid #b73aa1;
+            font-size: 17px;
+            padding-left: 5px;
+            text-transform: capitalize;
+        }
+
+        #issue,
+        #Namediv,
+        #Locationdiv,
+        #Contactdiv {
+            padding: 15px;
+            width: 61%;
+            height: 20%;
+            position: absolute;
+            left: 20%;
+            background: #faf7f3;
+            top: 99%;
+            display: none;
+            flex-direction: column;
+            box-shadow: 5px 6px 6px #a0bee2;
+
+        }
+
+        #sugg {
+            width: 61%;
+            height: 22%;
+            display: none;
+            position: absolute;
+            left: 20%;
+            top: 127%;
+            background: #faf7f3;
+            box-shadow: 5px 6px 6px #a0bee2;
+            padding: 17px;
+            flex-direction: column;
+        }
+        #copy{
+            position: absolute;
+    bottom: -139%;
+    right: 2%;
+    opacity: 1;
+    z-index: 5;
+    user-select: none;
+        }
+        #Suggestion,
+        #Summary,
+        #Contact {
+            background: #e7c1f14d;
+            padding: 10px;
+            font-size: 16px;
+            border: 0;
+            width: 100%;
+            text-transform: capitalize;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        #Critidiv {
+            display: none;
+            width: 61%;
+            padding: 18px;
+            position: absolute;
+            top: 158%;
+            left: 20%;
+            background: #faf7f3;
+            justify-content: flex-start;
+            box-shadow: 5px 6px 6px #a0bee2;
+        }
+
+        #submit {
+            display: none;
+            width: 18%;
+            height: 8%;
+            font-size: 20px;
+            background: #a3bed4;
+            color: white;
+            position: absolute;
+            top: 218%;
+            left: 40%;
+            border: 0;
+            box-shadow: 3px 3px 3px #211d22;
+            cursor: pointer;
+        }
+        #submit:hover{
+            transform: scale(1.1);
+        }
+
+        #back {
+            display: none;
+            width: 83%;
+            height: 177%;
+            background: #cde2ff73;
+            position: absolute;
+            top: 40%;
+            left: 10%;
+            z-index: -1;
+            border: 2px solid white;
+            box-shadow: 10px 10px 10px #fffefea3;
+        }
+
+        #done {
+            background: #dedede69;
+    position: fixed;
+    width: 400px;
+    height: 127px;
+    overflow-wrap: break-word;
+    font-size: 33px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    top: 40%;
+    color: #817676;
+    left: 37%;
+    z-index: 3;
+    display: none;
+    box-shadow: 5px 2px 2px #060202;
+        }
+        #hd{
+            background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjgixUSoK0J4gxuR_LAZaGYit4wH27YB9C0hklT0buX1f5T8cUdVGKxKAO3U1q_OO7_vyXceJgyKjOaEG8R5rg-AaOlzGzazM07GrTYHKh8BTunVmFkx7YPtVqvbKaFS2Z7_I88z_llyulFP3AG5B__LArw2Id1psuRH5dFydNFxGmjtPaAaHz8Jwsn/s1600/download.png);
+    background-size: unset;
+    background-repeat: round;
+    width: 16.5%;
+    height: 200px;
+        }
+        .hd{
+            width: 97.5%;
+    background-color: white;
+    height: 296px;
+    position: absolute;
+    top: 0px;
+    display: none;
+    justify-content: flex-start;
+    font-size: 40px;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+        }
+    </style>
+</head>
+
+<body id="main" onclick="Othertask()" oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+    <div id="firstthing">
+        <p id="header">LOG IN</p>
+        <img id="suraksha"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfqdGZVEL-wOBQ1i0vqT8RQwErqLgEhnqORLOn1p-gSEw13Kzv9O_D_dN3F-v4pF87R1rZPRYm4bKgGn7bnpPIGP6HJxC51pB6yYNbY2SCpBFbv_LZ2Jst0vYGmbLbuMspy3Iq1yXuZbEgFqd3Le0ng3jQhtmTv3BulF40z2i8xtuQpEO29sgb0tQj/s16000/Picture1-removebg-preview.png"
+            alt="">
+        <input id="nameput" type="text" placeholder="Type Your Name">
+        <p id="usericon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                    d="M256 288c79.5 0 144-64.5 144-144S335.5 0 256 0 112 64.5 112 144s64.5 144 144 144zm128 32h-55.1c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16H128C57.3 320 0 377.3 0 448v16c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48v-16c0-70.7-57.3-128-128-128z" />
+            </svg>
+        </p>
+        <input id="locationput" type="text" placeholder="Location">
+        <p id="locationicon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                <path
+                    d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z" />
+            </svg>
+
+        </p>
+        <p id="pbtn" onclick="pbtn()">Click Me</p>
+    </div>
+    <div id="sidething"></div>
+    <form style="display: flex;
+        flex-direction: column;
+        align-items: center;" id="my-form" method="POST"
+        action="https://script.google.com/macros/s/AKfycbydL7m9Wti_-d6Ik6b3vTuhN4DPu8TaiUvKAIFsS-itCt88oc22nKp6LYMwUaNj3V8Rbw/exec">
+        <div id="src">
+            <p>SOURCE TYPE :</p>
+            <div id="src1"><input id="SOURCE" name="SOURCE" readonly="readonly" value="Select Source"
+                    type="text"><select id="srcp" onchange="Othertaskclg()">
+                    <option value="HOME COLLECTION">HOME COLLECTION</option>
+                    <option value="CENTRE">CENTRE</option>
+                    <option value="CRM">CRM</option>
+                    <option value="LAB">LAB</option>
+                    <option value="SALES">SALES</option>
+                    <option value="OTHERS">OTHERS</option>
+                </select>
+                <textarea id="othersource" type="text" cols="30" rows="90"></textarea>
+            </div>
+        </div>
+        <div id="ctgdiv">
+            <p>CHOOSE CATAGORY :</p>
+            <div id="ctg2"><input id="CATAGORY" name="CATAGORY" readonly="readonly" value="Select Catagory"
+                    type="text"><select id="ctg" onchange="Othertaskclg()">
+                    <option value="BOOKING">BOOKING</option>
+                    <option value="BILLING">BILLING</option>
+                    <option value="ADMINISTRATIVE">ADMINISTRATIVE</option>
+                    <option value="MAINTAINENCE">MAINTAINENCE</option>
+                    <option value="CRM">CRM</option>
+                    <option value="OTHERS">OTHERS</option>
+                </select>
+                <textarea id="ctgspace" type="text" cols="30" rows="5"></textarea>
+            </div>
+        </div>
+        <div id="issue">
+            <p>Issue Details Summary (In Brief) : </p><textarea id="Summary" name="Summary" type="text" cols="40"
+                rows="5" placeholder="Write Issue Details Summary"></textarea>
+        </div>
+        <div id="sugg">
+            <p>Suggestion (In Brief) : </p><textarea id="Suggestion" name="Suggestion" type="text" cols="40" rows="5"
+                placeholder="Write Suggestion"></textarea>
+        </div>
+        <div id="Critidiv">
+            <p>Critical Type :</p>
+            <input id="Critical" name="Critical" readonly="readonly" value="HIGH" type="text"
+                style="margin-left: 3%;">
+            <select id="Critidivselect" onchange="Critidiv()" style="width: 35%;">
+                <option value="HIGH">HIGH</option>
+                <option value="MEDIUM">MEDIUM</option>
+                <option value="LOW">LOW</option>
+            </select>
+        </div>
+        <div id="Namediv" style="top: 173%;flex-direction: row;height: 7%;">
+            <p>Name : </p><input id="Name" name="Name" type="text" cols="40" rows="5" style="margin-left: 8%;"
+                readonly="readonly"></input>
+        </div>
+        <div id="Locationdiv" style="top: 186%;flex-direction: row;height: 7%;">
+            <p>Location : </p><input id="Location" name="Location" type="text" cols="40" rows="5"
+                style="margin-left: 6%;" readonly="readonly"></input>
+        </div>
+        <div id="Contactdiv" style="top: 200%;flex-direction: row;height: 7%;">
+            <p>Contact No. : </p><input id="Contact" name="Contact" type="number" cols="40" rows="5" pattern="[0-9]"
+                placeholder="Write Contact No" style="width: 40%;
+            margin-left: 3%;"></input>
+        </div>
+        <div><button id="submit" onclick="smt()">Click To Submit</button></div>
+
+    </form>
+    <div id="done">Thanks for your inputs.<br><br>We will get back.</div>
+    <span class="hd" id="cd"><span id="hd" ></span>
+    <p style="margin: 0;">Patient Service Improvement Suggestion/Issue Form</p></span>
+    <div id="back"></div>
+    <img id="surakshaback" style="    width: 90%;
+            height: 70%;
+            display: none;
+            z-index: 3;width: 61%;
+    height: 43%;
+    display: none;
+    top: -1%;
+    left: 23%;
+    opacity: 0.4;
+    z-index: -1;
+    position: fixed;"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfqdGZVEL-wOBQ1i0vqT8RQwErqLgEhnqORLOn1p-gSEw13Kzv9O_D_dN3F-v4pF87R1rZPRYm4bKgGn7bnpPIGP6HJxC51pB6yYNbY2SCpBFbv_LZ2Jst0vYGmbLbuMspy3Iq1yXuZbEgFqd3Le0ng3jQhtmTv3BulF40z2i8xtuQpEO29sgb0tQj/s16000/Picture1-removebg-preview.png"
+        alt="">
+<script>var _0xc74d=["\x70","\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74","\x73\x72\x63\x70","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x4F\x54\x48\x45\x52\x53","\x76\x61\x6C\x75\x65","\x73\x65\x6C\x65\x63\x74\x65\x64\x49\x6E\x64\x65\x78","\x6F\x70\x74\x69\x6F\x6E\x73","\x64\x69\x73\x70\x6C\x61\x79","\x73\x74\x79\x6C\x65","\x6F\x74\x68\x65\x72\x73\x6F\x75\x72\x63\x65","\x62\x6C\x6F\x63\x6B","\x53\x4F\x55\x52\x43\x45","\x6E\x6F\x6E\x65","\x43\x72\x69\x74\x69\x64\x69\x76\x73\x65\x6C\x65\x63\x74","\x43\x72\x69\x74\x69\x63\x61\x6C","\x63\x74\x67","\x63\x74\x67\x73\x70\x61\x63\x65","\x43\x41\x54\x41\x47\x4F\x52\x59","\x6E\x61\x6D\x65\x70\x75\x74","\x6C\x6F\x63\x61\x74\x69\x6F\x6E\x70\x75\x74","\x61\x70\x70\x65\x6E\x64","\x6D\x61\x69\x6E","","\x45\x6E\x74\x65\x72\x20\x59\x6F\x75\x72\x20\x4E\x61\x6D\x65\x20\x61\x6E\x64\x20\x4C\x6F\x63\x61\x74\x69\x6F\x6E","\x6F\x76\x65\x72\x66\x6C\x6F\x77","\x61\x75\x74\x6F","\x66\x69\x72\x73\x74\x74\x68\x69\x6E\x67","\x73\x69\x64\x65\x74\x68\x69\x6E\x67","\x73\x72\x63","\x66\x6C\x65\x78","\x63\x74\x67\x64\x69\x76","\x69\x73\x73\x75\x65","\x73\x75\x67\x67","\x43\x72\x69\x74\x69\x64\x69\x76","\x4E\x61\x6D\x65\x64\x69\x76","\x4C\x6F\x63\x61\x74\x69\x6F\x6E\x64\x69\x76","\x43\x6F\x6E\x74\x61\x63\x74\x64\x69\x76","\x73\x75\x62\x6D\x69\x74","\x62\x61\x63\x6B","\x73\x75\x72\x61\x6B\x73\x68\x61\x62\x61\x63\x6B","\x4E\x61\x6D\x65","\x4C\x6F\x63\x61\x74\x69\x6F\x6E","\x63\x64","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x43\x72\x65\x61\x74\x65\x64\x20\x42\x79\x20\x47\x6F\x75\x72\x61\x62\x20\x44\x61\x73","\x6D\x79\x2D\x66\x6F\x72\x6D","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x61\x63\x74\x69\x6F\x6E","\x74\x61\x72\x67\x65\x74","\x50\x4F\x53\x54","\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72","\x64\x6F\x6E\x65","\x63\x6C\x6F\x73\x65","\x69\x64","\x63\x6F\x70\x79","\x73\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65"];const para=document[_0xc74d[1]](_0xc74d[0]);function Othertask(){var _0x1e1dx3=document[_0xc74d[3]](_0xc74d[2]);_0xc74d[4]=== _0x1e1dx3[_0xc74d[7]][_0x1e1dx3[_0xc74d[6]]][_0xc74d[5]]?(document[_0xc74d[3]](_0xc74d[10])[_0xc74d[9]][_0xc74d[8]]= _0xc74d[11],document[_0xc74d[3]](_0xc74d[12])[_0xc74d[5]]= document[_0xc74d[3]](_0xc74d[10])[_0xc74d[5]]):(document[_0xc74d[3]](_0xc74d[12])[_0xc74d[5]]= _0x1e1dx3[_0xc74d[7]][_0x1e1dx3[_0xc74d[6]]][_0xc74d[5]],document[_0xc74d[3]](_0xc74d[10])[_0xc74d[9]][_0xc74d[8]]= _0xc74d[13]),setTimeout(Othertaskclg,64)}function Critidiv(){var _0x1e1dx3=document[_0xc74d[3]](_0xc74d[14]),_0x1e1dx5=_0x1e1dx3[_0xc74d[7]][_0x1e1dx3[_0xc74d[6]]][_0xc74d[5]];document[_0xc74d[3]](_0xc74d[15])[_0xc74d[5]]= _0x1e1dx5}function Othertaskclg(){var _0x1e1dx3=document[_0xc74d[3]](_0xc74d[16]);_0xc74d[4]=== _0x1e1dx3[_0xc74d[7]][_0x1e1dx3[_0xc74d[6]]][_0xc74d[5]]?(document[_0xc74d[3]](_0xc74d[17])[_0xc74d[9]][_0xc74d[8]]= _0xc74d[11],document[_0xc74d[3]](_0xc74d[18])[_0xc74d[5]]= document[_0xc74d[3]](_0xc74d[17])[_0xc74d[5]]):(document[_0xc74d[3]](_0xc74d[18])[_0xc74d[5]]= _0x1e1dx3[_0xc74d[7]][_0x1e1dx3[_0xc74d[6]]][_0xc74d[5]],document[_0xc74d[3]](_0xc74d[17])[_0xc74d[9]][_0xc74d[8]]= _0xc74d[13])}function pbtn(){var _0x1e1dx3=document[_0xc74d[3]](_0xc74d[19])[_0xc74d[5]],_0x1e1dx5=document[_0xc74d[3]](_0xc74d[20])[_0xc74d[5]];if(document[_0xc74d[3]](_0xc74d[22])[_0xc74d[21]](para),_0xc74d[23]=== _0x1e1dx3|| _0xc74d[23]=== _0x1e1dx5){alert(_0xc74d[24])}else {document[_0xc74d[3]](_0xc74d[22])[_0xc74d[9]][_0xc74d[25]]= _0xc74d[26],document[_0xc74d[3]](_0xc74d[27])[_0xc74d[9]][_0xc74d[8]]= _0xc74d[13],document[_0xc74d[3]](_0xc74d[28])[_0xc74d[9]][_0xc74d[8]]= _0xc74d[13],document[_0xc74d[3]](_0xc74d[29])[_0xc74d[9]][_0xc74d[8]]= _0xc74d[30],document[_0xc74d[3]](_0xc74d[31])[_0xc74d[9]][_0xc74d[8]]= _0xc74d[30],document[_0xc74d[3]](_0xc74d[32])[_0xc74d[9]][_0xc74d[8]]= _0xc74d[30],document[_0xc74d[3]](_0xc74d[33])[_0xc74d[9]][_0xc74d[8]]= _0xc74d[30],document[_0xc74d[3]](_0xc74d[34])[_0xc74d[9]][_0xc74d[8]]= _0xc74d[30],document[_0xc74d[3]](_0xc74d[35])[_0xc74d[9]][_0xc74d[8]]= _0xc74d[30],document[_0xc74d[3]](_0xc74d[36])[_0xc74d[9]][_0xc74d[8]]= _0xc74d[30],document[_0xc74d[3]](_0xc74d[37])[_0xc74d[9]][_0xc74d[8]]= _0xc74d[30],document[_0xc74d[3]](_0xc74d[38])[_0xc74d[9]][_0xc74d[8]]= _0xc74d[11],document[_0xc74d[3]](_0xc74d[39])[_0xc74d[9]][_0xc74d[8]]= _0xc74d[30],document[_0xc74d[3]](_0xc74d[40])[_0xc74d[9]][_0xc74d[8]]= _0xc74d[11];_0x1e1dx3= document[_0xc74d[3]](_0xc74d[19])[_0xc74d[5]],_0x1e1dx5= document[_0xc74d[3]](_0xc74d[20])[_0xc74d[5]];document[_0xc74d[3]](_0xc74d[41])[_0xc74d[5]]= _0x1e1dx3,document[_0xc74d[3]](_0xc74d[42])[_0xc74d[5]]= _0x1e1dx5,document[_0xc74d[3]](_0xc74d[43])[_0xc74d[9]][_0xc74d[8]]= _0xc74d[30],setTimeout(ok(),128)};para[_0xc74d[44]]= _0xc74d[45]}function smt(){const _0x1e1dx3=document[_0xc74d[3]](_0xc74d[46]);_0x1e1dx3[_0xc74d[51]](_0xc74d[38],(function(_0x1e1dx5){_0x1e1dx5[_0xc74d[47]]();const _0x1e1dx9= new FormData(_0x1e1dx3),_0x1e1dxa=_0x1e1dx5[_0xc74d[49]][_0xc74d[48]];fetch(_0x1e1dxa,{method:_0xc74d[50],body:_0x1e1dx9})})),document[_0xc74d[3]](_0xc74d[52])[_0xc74d[9]][_0xc74d[8]]= _0xc74d[11],setTimeout(cls,3e3)}function cls(){window[_0xc74d[53]]()}function ok(){para[_0xc74d[56]](_0xc74d[54],_0xc74d[55])}</script>
+</body>
+
+</html>
